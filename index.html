@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ab566d2b87.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+   <div class="wrapper">
+    <div class="hesap-makinesi">
+
+        <div class="editor">
+            <h1 >{{ gosterilecekNumara }}</h1>
+        </div>
+        <div class="nums">
+            <div class="row">
+                <div class="row-item">%</div>
+                <div class="row-item">CE</div>
+                <div class="row-item">C</div>
+                <div class="row-item"><i class="fas fa-backspace"></i></div>
+            </div>
+            <div class="row">
+                <div class="row-item" >1/x</div>
+                <div class="row-item">x^2</div>
+                <div class="row-item">√¯x</div>
+                <div class="row-item">/</div>
+            </div>
+            <div class="row">
+                
+                <div class="row-item" v-on:click="addnum(7)">7</div>
+                <div class="row-item" v-on:click="addnum(8)">8</div>
+                <div class="row-item" v-on:click="addnum(9)">9</div>
+                <div class="row-item" >X</div>
+            </div>
+            <div class="row">
+                
+                <div class="row-item" v-on:click="addnum(4)">4</div>
+                <div class="row-item" v-on:click="addnum(5)">5</div>
+                <div class="row-item" v-on:click="addnum(6)">6</div>
+                <div class="row-item"  >-</div>
+            </div>
+            <div class="row">
+                
+                <div class="row-item" v-on:click="addnum(1)">1</div>
+                <div class="row-item" v-on:click="addnum(2)">2</div>
+                <div class="row-item" v-on:click="addnum(3)">3</div>
+                <div class="row-item" >+</div>
+            </div>
+            <div class="row">
+                <div class="row-item">+/-</div>
+                <div class="row-item" v-on:click="addnum(0)" >0</div>
+                <div class="row-item">,</div>
+                <div class="row-item" v-on:click="calc()" >=</div>
+            </div>
+        </div>
+
+    </div>
+
+   </div>
+   
+
+   <script>
+    var app = new Vue({
+        el: '.wrapper',
+        data:{
+            gosterilecekNumara:'',
+            numara1:'',
+            numara2:'',
+            islem:'',
+        },
+        
+        methods: {
+            addnum(num){
+                    this.gosterilecekNumara = this.gosterilecekNumara+num;    
+                    if(islem == ""){                                   
+                        this.numara1 = parseInt(gosterilecekNumara);
+                    }
+                    else{              
+                        this.numara2 = parseInt(gosterilecekNumara);
+                    }
+                
+            },
+            islembelirle(){            
+                
+            },
+            calc(){
+                var yapilacakIslem = this.islem;
+                if(yapilacakIslem == "+"){
+                    gosterilecekNumara = this.numara1 + this.numara2;
+                }
+                if(yapilacakIslem == "-"){
+                    gosterilecekNumara = this.numara1 - this.numara2;
+                }
+                if(yapilacakIslem == "x"){
+                    gosterilecekNumara = this.numara1 * this.numara2;
+                }
+            }
+        }
+        
+        
+    });
+</script>
+</body>
+</html>

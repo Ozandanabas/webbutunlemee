@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    width: 100%;
+    height: 100vh;
+
+}
+.hesap-makinesi{
+    width: 35%;
+    height: 80%;
+    background-color: #333;
+    margin: 5%  auto;
+    border:1px solid #333;
+
+}
+
+.hesap-makinesi .editor{
+    background-color: #fff;
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: end;
+    align-content: flex-end;
+    align-items: flex-end;
+    font-size: 5vh;
+}
+.hesap-makinesi .editor h1{
+    width: 100%;
+    text-align: end;
+}
+.hesap-makinesi .nums{
+    background-color: #bbb;
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+}
+.hesap-makinesi .nums .row{
+    width: 100%;
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex-grow:1;
+}
+.hesap-makinesi .nums .row .row-item{
+    background-color: #ccc;
+    border:1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: #333;
+    cursor: pointer;
+}
+.hesap-makinesi .nums .row .row-item:hover{
+    background-color: silver;
+
+}
